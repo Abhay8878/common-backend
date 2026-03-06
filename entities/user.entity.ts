@@ -15,26 +15,26 @@ import { UserRole } from '../enums/user-role.enum';
 @Entity('users')
 export class User {
     @PrimaryGeneratedColumn('uuid')
-    id: string;
+    id!: string;
 
     @Column({ length: 100 })
-    name: string;
+    name!: string;
 
     @Column({ unique: true })
-    email: string;
+    email!: string;
 
     @Column({ select: false })
-    password: string;
+    password!: string;
 
     @Column({ type: 'enum', enum: UserRole, default: UserRole.USER })
-    role: UserRole;
+    role!: UserRole;
 
     @Column({ default: true })
-    isActive: boolean;
+    isActive!: boolean;
 
     @CreateDateColumn()
-    createdAt: Date;
+    createdAt!: Date;
 
     @UpdateDateColumn()
-    updatedAt: Date;
+    updatedAt!: Date;
 }
